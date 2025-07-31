@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      # required for all workflows
       security-events: write
       actions: read
       contents: read
@@ -22,7 +21,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           config-file: ./.github/codeql/codeql-config.yml
-          languages: javascript, java
+          languages: javascript
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
